@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(walkSpeed * Xaxis, rb.velocity.y);
     }
 
+    // ensures the player is on the floor before it can take another jump
     private bool Grounded(){
         if(Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, ground) 
             || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, ground)
