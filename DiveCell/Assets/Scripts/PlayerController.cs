@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float walkSpeed = 1;                
     [SerializeField] private float jumpForce = 45f;
     private int jumpBufferCounter = 0;
-    [SerializeField] private int jumpBufferFrames;    
+    [SerializeField] private int jumpBufferFrames;   
+    private float coyoteTimeCounter = 0;
+    [SerializeField] private float coyoteTime; // how long it will be
 
     [Header("Ground Check Settings")]    
     [SerializeField] private Transform groundCheckPoint;
@@ -92,7 +94,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if(!pState.jumping){           
-            if(jumpBufferCounter > 0 && Grounded()){
+            if(jumpBufferCounter > 0 && coyoteTimeCounter > 0){
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
                 pState.jumping = true;
             }
@@ -105,6 +107,10 @@ public class PlayerController : MonoBehaviour
     void UpdateJumpVariables(){
         if(Grounded()){
             pState.jumping = false;
+            coyoteTimeCounter = coyoteTime;
+        }
+        else{
+            coyoteTimeCounter -= Time.deltaTime; // decrease when player isn't grounded
         }
 
         if(Input.GetButtonDown("Jump")){
