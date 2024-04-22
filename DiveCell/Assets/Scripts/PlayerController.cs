@@ -22,11 +22,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckY = 0.2f;
     [SerializeField] private float groundCheckX = 0.5f;
     [SerializeField] private LayerMask ground;   
+    [SerializeField] private float dashSpeed; // control how fast dash is
+    [SerializeField] private float dashTime; 
+    [SerializeField] private float dashCooldown;
 
     PlayerStateList pState;
     private Rigidbody2D rb;
     private float Xaxis;        
     Animator anim;
+    private bool canDash;
+    private bool dashed;
+    private float gravity;
 
     // singleton so that we can reference the player script outside of this script 
     public static PlayerController Instance;
@@ -47,6 +53,7 @@ public class PlayerController : MonoBehaviour
         pState = GetComponent<PlayerStateList>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        gravity = rb.gravityScale;
     }
 
     // Update is called once per frame
@@ -54,9 +61,11 @@ public class PlayerController : MonoBehaviour
     {
         GetInputs();
         UpdateJumpVariables();
+        if(pState.dashing) return;
         Flip();
         Move();
-        Jump();        
+        Jump();     
+        StartDash();   
     }
 
     void GetInputs(){
@@ -76,6 +85,31 @@ public class PlayerController : MonoBehaviour
     private void Move(){
         rb.velocity = new Vector2(walkSpeed * Xaxis, rb.velocity.y);
         anim.SetBool("Running", rb.velocity.x != 0 && Grounded());
+    }
+
+    void StartDash(){
+        if(Input.GetButtonDown("Dash") && canDash && !dashed){
+            StartCoroutine(Dash());
+            dashed = true; // won't allow player to dash again once in the air
+        }
+
+        if(Grounded()){
+            dashed = false;
+        }
+    }
+
+    // coroutine for dashing
+    IEnumerator Dash(){
+        canDash = false;
+        pState.dashing = true;
+        anim.SetTrigger("Dashing");
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(transform.localScale.x * dashSpeed, 0);
+        yield return new WaitForSeconds(dashTime);
+        rb.gravityScale = gravity;
+        pState.dashing = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 
     // ensures the player is on the floor before it can take another jump

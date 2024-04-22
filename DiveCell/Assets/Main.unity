@@ -408,12 +408,16 @@ MonoBehaviour:
   jumpForce: 45
   jumpBufferFrames: 8
   coyoteTime: 0.1
+  maxAirJumps: 1
   groundCheckPoint: {fileID: 1871525737}
   groundCheckY: 0.2
   groundCheckX: 0.5
   ground:
     serializedVersion: 2
     m_Bits: 8
+  dashSpeed: 70
+  dashTime: 0.2
+  dashCooldown: 0.35
 --- !u!95 &628257846
 Animator:
   serializedVersion: 5
@@ -448,6 +452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumping: 0
+  dashing: 0
 --- !u!1 &979287223
 GameObject:
   m_ObjectHideFlags: 0
