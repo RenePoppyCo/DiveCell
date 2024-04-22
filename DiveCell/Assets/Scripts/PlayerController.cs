@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckY = 0.2f;
     [SerializeField] private float groundCheckX = 0.5f;
     [SerializeField] private LayerMask ground;   
+
+    [Header("Dash Settings")]  
     [SerializeField] private float dashSpeed; // control how fast dash is
     [SerializeField] private float dashTime; 
     [SerializeField] private float dashCooldown;
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private float Xaxis;        
     Animator anim;
-    private bool canDash;
+    private bool canDash = true;
     private bool dashed;
     private float gravity;
 
