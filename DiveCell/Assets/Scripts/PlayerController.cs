@@ -28,6 +28,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashTime; 
     [SerializeField] private float dashCooldown;
 
+    [Header("Attack Settings")]  
+    bool attack = false;
+    float timeBetweenAttack, timeSinceAttacked;
+
     PlayerStateList pState;
     private Rigidbody2D rb;
     private float Xaxis;        
@@ -67,11 +71,13 @@ public class PlayerController : MonoBehaviour
         Flip();
         Move();
         Jump();     
-        StartDash();   
+        StartDash();    
+        Attack();
     }
 
     void GetInputs(){
         Xaxis = Input.GetAxisRaw("Horizontal");
+        attack = Input.GetMouseButtonDown(0);
     }
 
     // flip player when walking in other direction
@@ -112,6 +118,14 @@ public class PlayerController : MonoBehaviour
         pState.dashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    void Attack(){
+        timeSinceAttacked += Time.deltaTime;
+        if(attack && timeSinceAttacked >= timeBetweenAttack){
+            timeSinceAttacked = 0;
+            anim.SetTrigger("Attacking");
+        }
     }
 
     // ensures the player is on the floor before it can take another jump
