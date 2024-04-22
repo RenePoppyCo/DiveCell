@@ -5,19 +5,21 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Horizontal Movement Settings")]
-    private Rigidbody2D rb;
-    [SerializeField] private float walkSpeed = 1;
-    private float Xaxis;
+    [Header("Horizontal Movement Settings:")]
+    [SerializeField] private float walkSpeed = 1;                
+    [SerializeField] private float jumpForce = 45f;
+    private int jumpBufferCounter = 0;
+    [SerializeField] private int jumpBufferFrames;    
 
-    [Header("Ground Check Settings")]
-    private float jumpForce = 45;
+    [Header("Ground Check Settings")]    
     [SerializeField] private Transform groundCheckPoint;
     [SerializeField] private float groundCheckY = 0.2f;
     [SerializeField] private float groundCheckX = 0.5f;
-    [SerializeField] private LayerMask ground;
+    [SerializeField] private LayerMask ground;   
 
-    // animiation
+    PlayerStateList pState;
+    private Rigidbody2D rb;
+    private float Xaxis;        
     Animator anim;
 
     // singleton so that we can reference the player script outside of this script 
@@ -36,6 +38,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pState = GetComponent<PlayerStateList>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
@@ -44,9 +47,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         GetInputs();
-        Move();
-        Jump();
+        UpdateJumpVariables();
         Flip();
+        Move();
+        Jump();        
     }
 
     void GetInputs(){
@@ -69,7 +73,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // ensures the player is on the floor before it can take another jump
-    private bool Grounded(){
+    public bool Grounded(){
         if(Physics2D.Raycast(groundCheckPoint.position, Vector2.down, groundCheckY, ground) 
             || Physics2D.Raycast(groundCheckPoint.position + new Vector3(groundCheckX, 0, 0), Vector2.down, groundCheckY, ground)
             || Physics2D.Raycast(groundCheckPoint.position + new Vector3(-groundCheckX, 0, 0), Vector2.down, groundCheckY, ground))
@@ -84,12 +88,30 @@ public class PlayerController : MonoBehaviour
     void Jump(){
         if(Input.GetButtonUp("Jump") && rb.velocity.y > 0){
             rb.velocity = new Vector2(rb.velocity.x, 0);
+            pState.jumping = false;
         }
 
-        if(Input.GetButtonDown("Jump") && Grounded()){
-            rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+        if(!pState.jumping){           
+            if(jumpBufferCounter > 0 && Grounded()){
+                rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+                pState.jumping = true;
+            }
         }
 
         anim.SetBool("Jumping", !Grounded());
+    }
+
+    // set jumping bool to false when grounded
+    void UpdateJumpVariables(){
+        if(Grounded()){
+            pState.jumping = false;
+        }
+
+        if(Input.GetButtonDown("Jump")){
+            jumpBufferCounter = jumpBufferFrames;
+        }
+        else{
+            jumpBufferCounter--;
+        }    
     }
 }
