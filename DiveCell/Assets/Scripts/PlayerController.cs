@@ -6,12 +6,16 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Horizontal Movement Settings:")]
-    [SerializeField] private float walkSpeed = 1;                
+    [SerializeField] private float walkSpeed = 1;       
+
+    [Header("Vertical Movement Settings:")]
     [SerializeField] private float jumpForce = 45f;
     private int jumpBufferCounter = 0;
     [SerializeField] private int jumpBufferFrames;   
     private float coyoteTimeCounter = 0;
     [SerializeField] private float coyoteTime; // how long it will be
+    private int airJumpCounter = 0; // keep track of how long the player is in the air
+    [SerializeField] private int maxAirJumps;
 
     [Header("Ground Check Settings")]    
     [SerializeField] private Transform groundCheckPoint;
@@ -98,6 +102,11 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector3(rb.velocity.x, jumpForce);
                 pState.jumping = true;
             }
+            else if(!Grounded() && airJumpCounter < maxAirJumps && Input.GetButtonDown("Jump")){
+                pState.jumping = true;
+                airJumpCounter++;
+                rb.velocity = new Vector3(rb.velocity.x, jumpForce);
+            }
         }
 
         anim.SetBool("Jumping", !Grounded());
@@ -108,6 +117,7 @@ public class PlayerController : MonoBehaviour
         if(Grounded()){
             pState.jumping = false;
             coyoteTimeCounter = coyoteTime;
+            airJumpCounter = 0;
         }
         else{
             coyoteTimeCounter -= Time.deltaTime; // decrease when player isn't grounded
