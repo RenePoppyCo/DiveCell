@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     [Header("Attack Settings")]  
     bool attack = false;
     float timeBetweenAttack, timeSinceAttacked;
+    [SerializeField] Transform SideAttackTransform, UpAttackTransform, DownAttackTransform;
+    [SerializeField] Vector2 SideAttackArea, UpAttackArea, DownAttackArea;
 
     PlayerStateList pState;
     private Rigidbody2D rb;
@@ -60,6 +62,14 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
+    }
+
+    // we'll call this to clear the scene for attack areas
+    private void OnDrawGizmos() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(SideAttackTransform.position, SideAttackArea);
+        Gizmos.DrawWireCube(UpAttackTransform.position, UpAttackArea);
+        Gizmos.DrawWireCube(DownAttackTransform.position, DownAttackArea);
     }
 
     // Update is called once per frame
