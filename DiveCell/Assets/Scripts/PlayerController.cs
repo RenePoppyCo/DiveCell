@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Transform SideAttackTransform, UpAttackTransform, DownAttackTransform;
     [SerializeField] Vector2 SideAttackArea, UpAttackArea, DownAttackArea;
     [SerializeField] LayerMask attackableLayer;
+    [SerializeField] float damage;
 
     PlayerStateList pState;
     private Rigidbody2D rb;
@@ -159,6 +160,12 @@ public class PlayerController : MonoBehaviour
 
         if(objectsToHit.Length > 0){
             UnityEngine.Debug.Log("Hit");
+        }
+        // look for things to hit within the area
+        for(int i=0; i < objectsToHit.Length; i++){
+            if(objectsToHit[i].GetComponent<Enemy>() != null){
+                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage);
+            }
         }
     }
 
