@@ -356,8 +356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  recoilLength: 1
-  recoilFactor: 50
+  recoilLength: 0.5
+  recoilFactor: 5
   isRecoiling: 0
 --- !u!61 &608141679
 BoxCollider2D:
@@ -699,6 +699,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 2
+  recoilXSteps: 5
+  recoilYSteps: 5
+  recoilXSpeed: 100
+  recoilYSpeed: 100
 --- !u!95 &628257846
 Animator:
   serializedVersion: 5
@@ -734,6 +738,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumping: 0
   dashing: 0
+  recoilingX: 0
+  recoilingY: 0
+  lookingRight: 0
 --- !u!1 &979287223
 GameObject:
   m_ObjectHideFlags: 0

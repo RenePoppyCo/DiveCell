@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using UnityEngine;
 
+// WILL SERVE AS A BASE CLASS FOR ALL ENEMIES
+
 public class Enemy : MonoBehaviour
 {
 

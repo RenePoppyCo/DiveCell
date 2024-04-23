@@ -28,13 +28,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float dashTime; 
     [SerializeField] private float dashCooldown;
 
-    [Header("Attack Settings")]  
+    [Header("Attack Settings")]
     bool attack = false;
     float timeBetweenAttack, timeSinceAttacked;
     [SerializeField] Transform SideAttackTransform, UpAttackTransform, DownAttackTransform;
     [SerializeField] Vector2 SideAttackArea, UpAttackArea, DownAttackArea;
     [SerializeField] LayerMask attackableLayer;
     [SerializeField] float damage;
+
+    [Header("Recoil Settings")]
+    [SerializeField] int recoilXSteps = 5;
+    [SerializeField] int recoilYSteps = 5;
+    [SerializeField] float recoilXSpeed = 100;
+    [SerializeField] float recoilYSpeed = 100;
+    int stepsXRecoiled, stepsYRecoiled;
 
     PlayerStateList pState;
     private Rigidbody2D rb;
@@ -85,6 +92,7 @@ public class PlayerController : MonoBehaviour
         Jump();     
         StartDash();    
         Attack();
+        Recoil();
     }
 
     void GetInputs(){
@@ -97,9 +105,11 @@ public class PlayerController : MonoBehaviour
     void Flip(){
         if(Xaxis < 0){
             transform.localScale = new Vector2(-1, transform.localScale.y);
+            pState.lookingRight = false;
         }
         else if(Xaxis > 0){
             transform.localScale = new Vector2(1, transform.localScale.y);
+            pState.lookingRight = true;
         }
     }
 
@@ -143,30 +153,83 @@ public class PlayerController : MonoBehaviour
 
             // set up side attack (when the player is not holding down w or s, or holding down s, but grounded)
             if(yAxis == 0 || yAxis < 0 && Grounded()){
-                Hit(SideAttackTransform, SideAttackArea);
+                Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
             }
             else if(yAxis > 0){
-                Hit(UpAttackTransform, UpAttackArea); // when player attacks up
+                Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed); // when player attacks up
             }
             else if(yAxis < 0 && !Grounded()){
-                Hit(DownAttackTransform, DownAttackArea);
+                Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, recoilYSpeed);
             }
         }
     }
 
-    private void Hit(Transform _attackTransform, Vector2 _attackArea){
+    private void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength){
         // declairing what player is able to hit or not hit
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
 
         if(objectsToHit.Length > 0){
             UnityEngine.Debug.Log("Hit");
+            _recoilDir = true;
         }
         // look for things to hit within the area
         for(int i=0; i < objectsToHit.Length; i++){
             if(objectsToHit[i].GetComponent<Enemy>() != null){
-                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, 100);
+                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
             }
         }
+    }
+
+    void Recoil(){
+        if(pState.recoilingX){
+            if(pState.lookingRight){
+                rb.velocity = new Vector2(-recoilXSpeed, 0);
+            }
+            else{
+                rb.velocity = new Vector2(recoilXSpeed, 0);
+            }
+        }
+
+        if(pState.recoilingY){
+            rb.gravityScale = 0; // ensure gravity does not affect recoil
+
+            if(yAxis < 0){      // if attacking downward           
+                rb.velocity = new Vector2(rb.velocity.x, recoilYSpeed);
+            }
+            else{
+                rb.velocity = new Vector2(rb.velocity.x, -recoilYSpeed);
+            }
+            airJumpCounter = 0;
+        }
+        else{
+            rb.gravityScale = gravity;
+        }
+
+        if(pState.recoilingX && stepsXRecoiled < recoilXSteps){
+            stepsXRecoiled++;
+        }
+        else{
+            StopRecoilX();
+        }
+        
+        if(pState.recoilingY && stepsYRecoiled < recoilYSteps){
+            stepsYRecoiled++;
+        }
+        else{
+            StopRecoilY();
+        }
+        if(Grounded()){
+            StopRecoilY();
+        }
+    }
+
+    void StopRecoilX(){
+        stepsXRecoiled = 0;
+        pState.recoilingX = false;
+    }
+        void StopRecoilY(){
+        stepsYRecoiled = 0;
+        pState.recoilingY = false;
     }
 
     // ensures the player is on the floor before it can take another jump
