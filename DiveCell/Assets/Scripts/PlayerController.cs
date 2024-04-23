@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
     void GetInputs(){
         Xaxis = Input.GetAxisRaw("Horizontal");
-        Xaxis = Input.GetAxisRaw("Vertical");
+        yAxis = Input.GetAxisRaw("Vertical");
         attack = Input.GetMouseButtonDown(0);
     }
 
@@ -137,12 +137,14 @@ public class PlayerController : MonoBehaviour
         if(attack && timeSinceAttacked >= timeBetweenAttack){
             timeSinceAttacked = 0;
             anim.SetTrigger("Attacking");
+            
+            //UnityEngine.Debug.Log("this is called at leasttasdashdhasdashjlksadh");
 
             // set up side attack (when the player is not holding down w or s, or holding down s, but grounded)
             if(yAxis == 0 || yAxis < 0 && Grounded()){
                 Hit(SideAttackTransform, SideAttackArea);
             }
-            else if(yAxis  > 0){
+            else if(yAxis > 0){
                 Hit(UpAttackTransform, UpAttackArea); // when player attacks up
             }
             else if(yAxis < 0 && !Grounded()){
@@ -154,6 +156,10 @@ public class PlayerController : MonoBehaviour
     private void Hit(Transform _attackTransform, Vector2 _attackArea){
         // declairing what player is able to hit or not hit
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
+
+        if(objectsToHit.Length > 0){
+            UnityEngine.Debug.Log("Hit");
+        }
     }
 
     // ensures the player is on the floor before it can take another jump
