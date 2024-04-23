@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
         // look for things to hit within the area
         for(int i=0; i < objectsToHit.Length; i++){
             if(objectsToHit[i].GetComponent<Enemy>() != null){
-                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage);
+                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, 100);
             }
         }
     }

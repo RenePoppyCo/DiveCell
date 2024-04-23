@@ -356,6 +356,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  recoilLength: 1
+  recoilFactor: 50
+  isRecoiling: 0
 --- !u!61 &608141679
 BoxCollider2D:
   m_ObjectHideFlags: 0
