@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 317970013}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.08, y: 0.06, z: 0}
+  m_LocalPosition: {x: 2.55, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -501,7 +501,7 @@ MonoBehaviour:
   isRecoiling: 0
   player: {fileID: 0}
   speed: 5
-  damage: 5
+  damage: 1
 --- !u!61 &608141684
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ MonoBehaviour:
   SideAttackTransform: {fileID: 317970014}
   UpAttackTransform: {fileID: 409081601}
   DownAttackTransform: {fileID: 473217411}
-  SideAttackArea: {x: 4.5, y: 3.5}
+  SideAttackArea: {x: 2.58, y: 4.44}
   UpAttackArea: {x: 3.5, y: 4.5}
   DownAttackArea: {x: 3.5, y: 4.5}
   attackableLayer:
