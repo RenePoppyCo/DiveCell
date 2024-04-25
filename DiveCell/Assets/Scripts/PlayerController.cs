@@ -36,6 +36,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask attackableLayer;
     [SerializeField] float damage;
 
+    bool restoreTime;
+    float restoreTimeSpeed;
+
     [Header("Recoil Settings")]
     [SerializeField] int recoilXSteps = 5;
     [SerializeField] int recoilYSteps = 5;
@@ -46,11 +49,16 @@ public class PlayerController : MonoBehaviour
     [Header("Health Settings")]
     public int health;
     public int maxHealth;
+    [SerializeField] float hitFlashSpeed;
+    public delegate void OnHealthChangeDelegate();
+    [HideInInspector] public OnHealthChangeDelegate onHealthChangedCallback; // responsible for any hearts updates
+
 
     [HideInInspector] public PlayerStateList pState;
     private Rigidbody2D rb;
     private float Xaxis, yAxis;        
     Animator anim;
+    private SpriteRenderer sr;
     private bool canDash = true;
     private bool dashed;
     private float gravity;
@@ -66,7 +74,7 @@ public class PlayerController : MonoBehaviour
         else {
             Instance = this;
         }
-        health = maxHealth;
+        Health = maxHealth;
     }
 
     // Start is called before the first frame update
@@ -74,6 +82,7 @@ public class PlayerController : MonoBehaviour
     {
         pState = GetComponent<PlayerStateList>();
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
     }
@@ -96,38 +105,86 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();     
         StartDash();    
-        Attack();        
+        Attack();    
+        restoreTimeScale();    
+        FlashWhileInvincible();
     }
 
+
+    // affected by the timescale rather than updating every frame
     private void FixedUpdate(){
         if(pState.dashing) return;
         Recoil();
     }
 
+    void FlashWhileInvincible(){
+        sr.material.color = pState.invincible ? 
+        Color.Lerp(Color.white, Color.black, Mathf.PingPong(Time.time * hitFlashSpeed, 1.0f)) 
+        : Color.white;
+    }
+
     public void TakeDamage(float _damage){
         UnityEngine.Debug.Log(_damage);
-        health -= Mathf.RoundToInt(_damage);
+        Health -= Mathf.RoundToInt(_damage);
 
         StartCoroutine(StopTakeingDamage());
     }
 
     IEnumerator StopTakeingDamage(){
         pState.invincible = true;
-        anim.SetTrigger("takeDamage");
-        ClampHealth();
+        anim.SetTrigger("takeDamage");        
         yield return new WaitForSeconds(1f);
         pState.invincible = false;
     }
+
+    void restoreTimeScale(){
+        if(restoreTime){
+            if(Time.timeScale < 1){
+                Time.timeScale += Time.deltaTime * restoreTimeSpeed;
+            }
+            else{
+                Time.timeScale = 1;
+                restoreTime = false;
+            }
+        }
+    }
+
+    public void HitStopTime(float _newTimeScale, int _restoreSpeed, float _delay){
+        restoreTimeSpeed = _restoreSpeed;
+        Time.timeScale = _newTimeScale;
+
+        // meaning we've been hit
+        if(_delay > 0){
+            StopCoroutine(StartTimeAgain(_delay));
+            StartCoroutine(StartTimeAgain(_delay));
+        }
+        else{
+            restoreTime = true;
+        }
+    }
     
-    // set min/max on health
-    void ClampHealth(){
-        health = Mathf.Clamp(health, 0, maxHealth);
+IEnumerator StartTimeAgain(float _delay){
+    restoreTime = true;
+    yield return new WaitForSeconds(_delay);
+}
+
+    public int Health{
+        get {return health;}
+        set{
+            if(health != value){
+                health = Mathf.Clamp(value, 0, maxHealth);
+
+                if(onHealthChangedCallback != null){
+                    onHealthChangedCallback.Invoke();
+                }
+            }
+        }
     }
 
     void GetInputs(){
         Xaxis = Input.GetAxisRaw("Horizontal");
         yAxis = Input.GetAxisRaw("Vertical");
-        attack = Input.GetMouseButtonDown(0);
+        attack = Input.GetButtonDown("Attack");
     }
 
     // flip player when walking in other direction
