@@ -43,7 +43,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float recoilYSpeed = 100;
     int stepsXRecoiled, stepsYRecoiled;
 
-    PlayerStateList pState;
+    [Header("Health Settings")]
+    public int health;
+    public int maxHealth;
+
+    [HideInInspector] public PlayerStateList pState;
     private Rigidbody2D rb;
     private float Xaxis, yAxis;        
     Animator anim;
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
         else {
             Instance = this;
         }
+        health = maxHealth;
     }
 
     // Start is called before the first frame update
@@ -91,8 +96,32 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();     
         StartDash();    
-        Attack();
+        Attack();        
+    }
+
+    private void FixedUpdate(){
+        if(pState.dashing) return;
         Recoil();
+    }
+
+    public void TakeDamage(float _damage){
+        UnityEngine.Debug.Log(_damage);
+        health -= Mathf.RoundToInt(_damage);
+
+        StartCoroutine(StopTakeingDamage());
+    }
+
+    IEnumerator StopTakeingDamage(){
+        pState.invincible = true;
+        anim.SetTrigger("takeDamage");
+        ClampHealth();
+        yield return new WaitForSeconds(1f);
+        pState.invincible = false;
+    }
+    
+    // set min/max on health
+    void ClampHealth(){
+        health = Mathf.Clamp(health, 0, maxHealth);
     }
 
     void GetInputs(){
@@ -143,7 +172,7 @@ public class PlayerController : MonoBehaviour
         canDash = true;
     }
 
-    void Attack(){
+    void Attack(){        
         timeSinceAttacked += Time.deltaTime;
         if(attack && timeSinceAttacked >= timeBetweenAttack){
             timeSinceAttacked = 0;
@@ -169,7 +198,7 @@ public class PlayerController : MonoBehaviour
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
 
         if(objectsToHit.Length > 0){
-            UnityEngine.Debug.Log("Hit");
+            //UnityEngine.Debug.Log("Hit");
             _recoilDir = true;
         }
         // look for things to hit within the area
