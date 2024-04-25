@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 608141681}
   - component: {fileID: 608141680}
   - component: {fileID: 608141679}
-  - component: {fileID: 608141678}
+  - component: {fileID: 608141683}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -343,22 +343,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &608141678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 608141677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: befebc8d7790a5a4e9533dd246565dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 10
-  recoilLength: 0.5
-  recoilFactor: 5
-  isRecoiling: 0
 --- !u!61 &608141679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -498,6 +482,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &608141683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608141677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6fb172e5a8d7ad49be78e83a4dba953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  recoilLength: 2
+  recoilFactor: 10
+  isRecoiling: 0
+  player: {fileID: 0}
+  speed: 10
 --- !u!1 &628257840
 GameObject:
   m_ObjectHideFlags: 0
