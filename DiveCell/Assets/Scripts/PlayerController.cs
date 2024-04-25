@@ -56,6 +56,12 @@ public class PlayerController : MonoBehaviour
     float healTimer;
     [SerializeField] float timeToHeal;
 
+    [Header("Mana Settings")]
+    [SerializeField] float mana;
+    [SerializeField] float manaDrainSpeed;
+    [SerializeField] float manaGain;
+
+
 
     [HideInInspector] public PlayerStateList pState;
     private Rigidbody2D rb;
@@ -88,6 +94,7 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
+        Mana = mana;
     }
 
     // we'll call this to clear the scene for attack areas
@@ -122,7 +129,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void Heal(){
-        if(Input.GetButton("Healing") && Health < maxHealth && !pState.jumping && !pState.dashing){
+        if(Input.GetButton("Healing") && Health < maxHealth && Mana > 0 && !pState.jumping && !pState.dashing){
             pState.healing = true;
             anim.SetBool("Healing", true);
 
@@ -131,6 +138,9 @@ public class PlayerController : MonoBehaviour
                 Health++;
                 healTimer = 0;
             }
+
+            // drain mana to limit healing
+            Mana -= Time.deltaTime * manaDrainSpeed;
         }
         else{
             pState.healing = false;
@@ -185,10 +195,19 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-IEnumerator StartTimeAgain(float _delay){
-    restoreTime = true;
-    yield return new WaitForSeconds(_delay);
-}
+    IEnumerator StartTimeAgain(float _delay){
+        restoreTime = true;
+        yield return new WaitForSeconds(_delay);
+    }
+
+    float Mana{
+        get{return mana;}
+        set{
+            if(mana != value){
+                mana = Mathf.Clamp(value, 0,1);
+            }
+        }
+    }
 
     public int Health{
         get {return health;}
@@ -283,7 +302,12 @@ IEnumerator StartTimeAgain(float _delay){
         // look for things to hit within the area
         for(int i=0; i < objectsToHit.Length; i++){
             if(objectsToHit[i].GetComponent<Enemy>() != null){
-                objectsToHit[i].GetComponent<Enemy>().EnemyHit(damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
+                objectsToHit[i].GetComponent<Enemy>().EnemyHit
+                (damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
+            
+                if(objectsToHit[i].CompareTag("Enemy")){
+                    Mana += manaGain;
+                }
             }
         }
     }
