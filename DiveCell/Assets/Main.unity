@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &184404135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6157874993759166197, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-  m_PrefabInstance: {fileID: 5487122323931280316}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &301795017
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -331, y: 179}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &431430628
@@ -314,7 +309,7 @@ MonoBehaviour:
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 40, y: 40}
+  m_CellSize: {x: 20, y: 20}
   m_Spacing: {x: 1, y: 1}
   m_Constraint: 2
   m_ConstraintCount: 1
@@ -887,7 +882,8 @@ MonoBehaviour:
   recoilYSpeed: 100
   health: 0
   maxHealth: 10
-  hitFlashSpeed: 0
+  hitFlashSpeed: 10
+  timeToHeal: 1
   pState: {fileID: 0}
 --- !u!95 &628257846
 Animator:
@@ -928,6 +924,7 @@ MonoBehaviour:
   recoilingY: 0
   lookingRight: 0
   invincible: 0
+  healing: 0
 --- !u!1 &979287223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartParents: {fileID: 431430627}
-  heartContainerPrefab: {fileID: 184404135}
+  heartContainerPrefab: {fileID: 6157874993759166197, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
 --- !u!114 &1846148133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,63 +1333,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &5487122323931280316
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3132407262140943055, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6157874993759166197, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
-      propertyPath: m_Name
-      value: Heart Container
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9c91b7500e6b75a4ba06c0d3dd11bf48, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1404,4 +1344,3 @@ SceneRoots:
   - {fileID: 608141682}
   - {fileID: 1846148136}
   - {fileID: 301795020}
-  - {fileID: 5487122323931280316}

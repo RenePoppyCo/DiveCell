@@ -53,6 +53,9 @@ public class PlayerController : MonoBehaviour
     public delegate void OnHealthChangeDelegate();
     [HideInInspector] public OnHealthChangeDelegate onHealthChangedCallback; // responsible for any hearts updates
 
+    float healTimer;
+    [SerializeField] float timeToHeal;
+
 
     [HideInInspector] public PlayerStateList pState;
     private Rigidbody2D rb;
@@ -108,6 +111,7 @@ public class PlayerController : MonoBehaviour
         Attack();    
         restoreTimeScale();    
         FlashWhileInvincible();
+        Heal();
     }
 
 
@@ -115,6 +119,24 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate(){
         if(pState.dashing) return;
         Recoil();
+    }
+
+    void Heal(){
+        if(Input.GetButton("Healing") && Health < maxHealth && !pState.jumping && !pState.dashing){
+            pState.healing = true;
+            anim.SetBool("Healing", true);
+
+            healTimer += Time.deltaTime;
+            if(healTimer >= timeToHeal){
+                Health++;
+                healTimer = 0;
+            }
+        }
+        else{
+            pState.healing = false;
+            anim.SetBool("Healing", false);
+            healTimer = 0;
+        }
     }
 
     void FlashWhileInvincible(){
