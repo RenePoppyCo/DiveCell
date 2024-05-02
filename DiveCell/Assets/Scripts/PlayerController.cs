@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator StopTakeingDamage(){
         pState.invincible = true;
-        anim.SetTrigger("takeDamage");        
+        anim.SetTrigger("TakeDamage");        
         yield return new WaitForSeconds(1f);
         pState.invincible = false;
     }
