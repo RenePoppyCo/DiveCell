@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using UnityEngine.UI;
+
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -57,6 +59,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float timeToHeal;
 
     [Header("Mana Settings")]
+    [SerializeField] Image manaStorage;
     [SerializeField] float mana;
     [SerializeField] float manaDrainSpeed;
     [SerializeField] float manaGain;
@@ -95,6 +98,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         gravity = rb.gravityScale;
         Mana = mana;
+        manaStorage.fillAmount = mana;
     }
 
     // we'll call this to clear the scene for attack areas
@@ -205,6 +209,7 @@ public class PlayerController : MonoBehaviour
         set{
             if(mana != value){
                 mana = Mathf.Clamp(value, 0,1);
+                manaStorage.fillAmount = mana;
             }
         }
     }
