@@ -4481,7 +4481,7 @@ Transform:
   m_GameObject: {fileID: 608141677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.12, y: 1.42, z: 0}
+  m_LocalPosition: {x: 3.11, y: -3.28, z: 0}
   m_LocalScale: {x: 0.9155, y: 1.5352, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4718,7 +4718,7 @@ Transform:
   m_GameObject: {fileID: 628257840}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.74, y: 1.48, z: 0}
+  m_LocalPosition: {x: -8.05, y: -3.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4848,6 +4848,9 @@ MonoBehaviour:
   mana: 0.5
   manaDrainSpeed: 0.2
   manaGain: 0.1
+  manaSpellCost: 0
+  timeBetweenCast: 0.5
+  sideSpellIceAttack: {fileID: 3767558857804287049, guid: 2b8c58d8cc7085d429a36963d7626aae, type: 3}
   pState: {fileID: 0}
 --- !u!95 &628257846
 Animator:
@@ -4889,6 +4892,7 @@ MonoBehaviour:
   lookingRight: 0
   invincible: 0
   healing: 0
+  casting: 0
 --- !u!1 &642656944
 GameObject:
   m_ObjectHideFlags: 0
@@ -14777,7 +14781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1654378321
 Transform:
   m_ObjectHideFlags: 0

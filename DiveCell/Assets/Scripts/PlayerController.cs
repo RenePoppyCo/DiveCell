@@ -4,6 +4,7 @@ using System.Diagnostics;
 using UnityEngine.UI;
 
 using UnityEngine;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -64,7 +65,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float manaDrainSpeed;
     [SerializeField] float manaGain;
 
-
+    [Header("Spell Settings")]
+    [SerializeField] float manaSpellCost = 0.2f;
+    [SerializeField] float timeBetweenCast = 0.5f;
+    [SerializeField] GameObject sideSpellIceAttack;
+    float timeSinceCast;
 
     [HideInInspector] public PlayerStateList pState;
     private Rigidbody2D rb;
@@ -123,13 +128,46 @@ public class PlayerController : MonoBehaviour
         restoreTimeScale();    
         FlashWhileInvincible();
         Heal();
+        CastSpell();
     }
-
 
     // affected by the timescale rather than updating every frame
     private void FixedUpdate(){
         if(pState.dashing) return;
         Recoil();
+    }
+
+    void CastSpell(){
+        if(Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost){
+            pState.casting = true;
+            timeSinceCast = 0;
+            StartCoroutine(CastCoroutine());
+        }
+        else{
+            timeSinceCast += Time.deltaTime;
+        }
+    }
+
+    IEnumerator CastCoroutine(){
+        anim.SetBool("Casting", true);
+        yield return new WaitForSeconds(0.12f);
+
+        if(yAxis == 0 || (yAxis < 0 && Grounded())){
+            GameObject _iceSpell = Instantiate(sideSpellIceAttack, SideAttackTransform.position, Quaternion.identity);
+
+            if(pState.lookingRight){
+                _iceSpell.transform.eulerAngles = Vector3.zero;
+            }
+            else{
+                _iceSpell.transform.eulerAngles = new Vector2(_iceSpell.transform.eulerAngles.x, 180);
+            }
+            pState.recoilingX = false;
+        }
+
+        Mana -= manaSpellCost;
+        yield return new WaitForSeconds(0.32f);
+        anim.SetBool("Casting", false);
+        pState.casting = false;
     }
 
     void Heal(){
