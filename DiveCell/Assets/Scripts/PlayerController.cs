@@ -325,30 +325,31 @@ public class PlayerController : MonoBehaviour
 
             // set up side attack (when the player is not holding down w or s, or holding down s, but grounded)
             if(yAxis == 0 || yAxis < 0 && Grounded()){
-                Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, recoilXSpeed);
+                int _recoilLeftOrRight = pState.lookingRight ? 1 : -1;
+
+                Hit(SideAttackTransform, SideAttackArea, ref pState.recoilingX, Vector2.right * _recoilLeftOrRight, recoilXSpeed);
             }
             else if(yAxis > 0){
-                Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, recoilYSpeed); // when player attacks up
+                Hit(UpAttackTransform, UpAttackArea, ref pState.recoilingY, Vector2.up, recoilYSpeed); // when player attacks up
             }
             else if(yAxis < 0 && !Grounded()){
-                Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, recoilYSpeed);
+                Hit(DownAttackTransform, DownAttackArea, ref pState.recoilingY, Vector2.down, recoilYSpeed);
             }
         }
     }
 
-    private void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilDir, float _recoilStrength){
+    private void Hit(Transform _attackTransform, Vector2 _attackArea, ref bool _recoilBool, Vector2 _recoilDir, float _recoilStrength){
         // declairing what player is able to hit or not hit
         Collider2D[] objectsToHit = Physics2D.OverlapBoxAll(_attackTransform.position, _attackArea, 0, attackableLayer);
 
         if(objectsToHit.Length > 0){
             //UnityEngine.Debug.Log("Hit");
-            _recoilDir = true;
+            _recoilBool = true;
         }
         // look for things to hit within the area
         for(int i=0; i < objectsToHit.Length; i++){
             if(objectsToHit[i].GetComponent<Enemy>() != null){
-                objectsToHit[i].GetComponent<Enemy>().EnemyHit
-                (damage, (transform.position - objectsToHit[i].transform.position).normalized, _recoilStrength);
+                objectsToHit[i].GetComponent<Enemy>().EnemyGetsHit(damage, _recoilDir, _recoilStrength);
             
                 if(objectsToHit[i].CompareTag("Enemy")){
                     Mana += manaGain;

@@ -21,6 +21,10 @@ public class Mushroom : Enemy
 
     protected override void UpdateEnemyStates()
     {
+        if(health <= 0){
+            Destroy(gameObject, 0.05f);
+        }
+
         switch(currentEnemyState){
             case EnemyStates.Mushroom_Idel:
                 Vector3 _ledgeCheckStart = transform.localScale.x > 0 ? new Vector3(ledgeCheckX, 0) : new Vector3(-ledgeCheckX, 0);
