@@ -131,12 +131,20 @@ public class PlayerController : MonoBehaviour
         FlashWhileInvincible();
         Heal();
         CastSpell();
+        CheckPlayerDeath();
     }
 
     // affected by the timescale rather than updating every frame
     private void FixedUpdate(){
         if(pState.dashing) return;
         Recoil();
+    }
+
+    void CheckPlayerDeath(){
+        if(health <= 0){
+            anim.SetBool("Death", true);
+            UnityEngine.Debug.Log("player has died");
+        }
     }
 
     IEnumerator Death(){

@@ -18000,6 +18000,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8709011048730331217, guid: 02c8f52cd17de5e4ca1597ecdf1df954, type: 3}
+      propertyPath: maxHealth
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709011048730331217, guid: 02c8f52cd17de5e4ca1597ecdf1df954, type: 3}
       propertyPath: manaStorage
       value: 
       objectReference: {fileID: 1477794296}
@@ -18124,6 +18128,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6133072535378332408, guid: fd2eae57aac363545961c42ba0edebc2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18137,6 +18145,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1306537160559837703, guid: ed51c162345719b4cb84fe1fc07a410a, type: 3}
+      propertyPath: speed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1306537160559837703, guid: ed51c162345719b4cb84fe1fc07a410a, type: 3}
       propertyPath: player
       value: 
