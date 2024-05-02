@@ -23,12 +23,7 @@ public class Enemy : MonoBehaviour
     protected Rigidbody2D rb;
 
     // Start is called before the first frame update
-    public virtual void Start()
-    {
-        
-    }
-
-    protected virtual void Awake(){
+    protected virtual void Start(){
         rb = GetComponent<Rigidbody2D>();
         player = PlayerController.Instance;
     }

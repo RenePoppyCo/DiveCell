@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
         else {
             Instance = this;
         }
-        Health = maxHealth;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
@@ -104,6 +104,8 @@ public class PlayerController : MonoBehaviour
         gravity = rb.gravityScale;
         Mana = mana;
         manaStorage.fillAmount = mana;
+
+        Health = maxHealth;
     }
 
     // we'll call this to clear the scene for attack areas
@@ -119,13 +121,13 @@ public class PlayerController : MonoBehaviour
     {
         GetInputs();
         UpdateJumpVariables();
+        restoreTimeScale();    
         if(pState.dashing) return;
         Flip();
         Move();
         Jump();     
         StartDash();    
-        Attack();    
-        restoreTimeScale();    
+        Attack();            
         FlashWhileInvincible();
         Heal();
         CastSpell();
