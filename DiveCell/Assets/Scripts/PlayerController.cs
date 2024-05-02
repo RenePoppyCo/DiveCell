@@ -139,6 +139,14 @@ public class PlayerController : MonoBehaviour
         Recoil();
     }
 
+    IEnumerator Death(){
+        pState.alive = false;
+        Time.timeScale = 1f;
+        anim.SetTrigger("Death");
+
+        yield return new WaitForSeconds(0.9f);
+    }
+
     void CastSpell(){
         if(Input.GetButtonDown("CastSpell") && timeSinceCast >= timeBetweenCast && Mana >= manaSpellCost){
             pState.casting = true;
