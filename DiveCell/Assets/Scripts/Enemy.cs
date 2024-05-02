@@ -22,6 +22,13 @@ public class Enemy : MonoBehaviour
 
     protected Rigidbody2D rb;
 
+    protected enum EnemyStates{
+        // mushroom
+        Mushroom_Idel,
+        Mushroom_Flip
+    }
+    protected EnemyStates currentEnemyState;
+
     // Start is called before the first frame update
     protected virtual void Start(){
         rb = GetComponent<Rigidbody2D>();
@@ -31,6 +38,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        UpdateEnemyStates();
+
         if (health <= 0){
             Destroy(gameObject);
         }
@@ -58,6 +67,12 @@ public class Enemy : MonoBehaviour
             Attack();
             PlayerController.Instance.HitStopTime(0,5,0.5f);
         }
+    }
+
+    protected virtual void UpdateEnemyStates(){}
+
+    protected void ChangeState(EnemyStates _newState){
+        currentEnemyState = _newState;
     }
 
     protected virtual void Attack(){

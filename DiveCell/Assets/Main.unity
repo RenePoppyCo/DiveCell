@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 7502679}
   - component: {fileID: 7502681}
   - component: {fileID: 7502680}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 42340761}
   - component: {fileID: 42340763}
   - component: {fileID: 42340762}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 44233922}
   - component: {fileID: 44233924}
   - component: {fileID: 44233923}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,7 +645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47097803}
   - component: {fileID: 47097804}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 50481157}
   - component: {fileID: 50481158}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1111,7 +1111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 103123895}
   - component: {fileID: 103123896}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_23 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1232,7 +1232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 110500977}
   - component: {fileID: 110500978}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1316,7 +1316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117414021}
   - component: {fileID: 117414022}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1400,7 +1400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 117832425}
   - component: {fileID: 117832426}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1685,7 +1685,7 @@ GameObject:
   - component: {fileID: 203535177}
   - component: {fileID: 203535179}
   - component: {fileID: 203535178}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,7 +1982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237831611}
   - component: {fileID: 237831612}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2066,7 +2066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245299156}
   - component: {fileID: 245299157}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_23 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2235,7 +2235,7 @@ GameObject:
   - component: {fileID: 301562816}
   - component: {fileID: 301562818}
   - component: {fileID: 301562817}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2432,7 +2432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 305937164}
   - component: {fileID: 305937165}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_8 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2516,7 +2516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 315876052}
   - component: {fileID: 315876053}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2600,7 +2600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 329321134}
   - component: {fileID: 329321135}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_23 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2768,7 +2768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385795735}
   - component: {fileID: 385795736}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2852,7 +2852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434831715}
   - component: {fileID: 434831716}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_11 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3020,7 +3020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 474991882}
   - component: {fileID: 474991883}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3138,7 +3138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503147588}
   - component: {fileID: 503147589}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_7 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3413,7 +3413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 527769138}
   - component: {fileID: 527769139}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3497,7 +3497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575073006}
   - component: {fileID: 575073007}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3796,7 +3796,7 @@ GameObject:
   - component: {fileID: 586318141}
   - component: {fileID: 586318143}
   - component: {fileID: 586318142}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3926,7 +3926,7 @@ GameObject:
   - component: {fileID: 591813737}
   - component: {fileID: 591813739}
   - component: {fileID: 591813738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4055,7 +4055,7 @@ GameObject:
   m_Component:
   - component: {fileID: 598999472}
   - component: {fileID: 598999473}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_13 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4140,7 +4140,7 @@ GameObject:
   - component: {fileID: 600366591}
   - component: {fileID: 600366593}
   - component: {fileID: 600366592}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4272,6 +4272,7 @@ GameObject:
   - component: {fileID: 608141680}
   - component: {fileID: 608141679}
   - component: {fileID: 608141683}
+  - component: {fileID: 608141684}
   m_Layer: 6
   m_Name: Mushroom
   m_TagString: Enemy
@@ -4337,8 +4338,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 1
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -4347,9 +4348,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!212 &608141681
 SpriteRenderer:
@@ -4389,8 +4390,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1274892735
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 4723107735738678597, guid: f8b30c2afe165d645b54d500a9c30862, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4412,7 +4413,7 @@ Transform:
   m_GameObject: {fileID: 608141677}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.13, y: -2.54, z: 0}
+  m_LocalPosition: {x: 6.22, y: 3.17, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4435,8 +4436,35 @@ MonoBehaviour:
   recoilFactor: 10
   isRecoiling: 0
   player: {fileID: 0}
-  speed: 5
+  speed: 3
   damage: 1
+  flipWaitTime: 0
+  ledgeCheckX: 1.2
+  ledgeCheckY: 1.42
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!95 &608141684
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608141677}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 739240ec3c850bd449c1aae3fd751554, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &613419365
 GameObject:
   m_ObjectHideFlags: 0
@@ -4447,7 +4475,7 @@ GameObject:
   m_Component:
   - component: {fileID: 613419366}
   - component: {fileID: 613419367}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_5 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4531,7 +4559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 642656945}
   - component: {fileID: 642656946}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4615,7 +4643,7 @@ GameObject:
   m_Component:
   - component: {fileID: 649811045}
   - component: {fileID: 649811046}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4699,7 +4727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 662550192}
   - component: {fileID: 662550193}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4997,7 +5025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 688316276}
   - component: {fileID: 688316277}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5081,7 +5109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708123713}
   - component: {fileID: 708123714}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_9 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5509,7 +5537,7 @@ GameObject:
   m_Component:
   - component: {fileID: 736906683}
   - component: {fileID: 736906684}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5594,7 +5622,7 @@ GameObject:
   - component: {fileID: 748150807}
   - component: {fileID: 748150809}
   - component: {fileID: 748150808}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_17 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5723,7 +5751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 750824045}
   - component: {fileID: 750824046}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_7 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5938,7 +5966,7 @@ GameObject:
   - component: {fileID: 770486710}
   - component: {fileID: 770486712}
   - component: {fileID: 770486711}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_18 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6067,7 +6095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784315311}
   - component: {fileID: 784315312}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_8 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6617,7 +6645,7 @@ GameObject:
   m_Component:
   - component: {fileID: 865453812}
   - component: {fileID: 865453813}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6785,7 +6813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875979907}
   - component: {fileID: 875979908}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7069,7 +7097,7 @@ GameObject:
   - component: {fileID: 888104962}
   - component: {fileID: 888104964}
   - component: {fileID: 888104963}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7199,7 +7227,7 @@ GameObject:
   - component: {fileID: 888533801}
   - component: {fileID: 888533803}
   - component: {fileID: 888533802}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7459,7 +7487,7 @@ GameObject:
   - component: {fileID: 926901999}
   - component: {fileID: 926902001}
   - component: {fileID: 926902000}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_17 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7718,7 +7746,7 @@ GameObject:
   m_Component:
   - component: {fileID: 934230332}
   - component: {fileID: 934230333}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_7 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7887,7 +7915,7 @@ GameObject:
   - component: {fileID: 943654243}
   - component: {fileID: 943654245}
   - component: {fileID: 943654244}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8101,7 +8129,7 @@ GameObject:
   - component: {fileID: 947739702}
   - component: {fileID: 947739704}
   - component: {fileID: 947739703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_18 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8646,7 +8674,7 @@ GameObject:
   - component: {fileID: 1037452030}
   - component: {fileID: 1037452032}
   - component: {fileID: 1037452031}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8775,7 +8803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1048882204}
   - component: {fileID: 1048882205}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8943,7 +8971,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1077267335}
   - component: {fileID: 1077267336}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9111,7 +9139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129036372}
   - component: {fileID: 1129036373}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9456,7 +9484,7 @@ GameObject:
   - component: {fileID: 1152508330}
   - component: {fileID: 1152508332}
   - component: {fileID: 1152508331}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9585,7 +9613,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1194849766}
   - component: {fileID: 1194849767}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9930,7 +9958,7 @@ GameObject:
   - component: {fileID: 1224302387}
   - component: {fileID: 1224302389}
   - component: {fileID: 1224302388}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_17 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10189,7 +10217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1236487067}
   - component: {fileID: 1236487068}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10274,7 +10302,7 @@ GameObject:
   - component: {fileID: 1258520475}
   - component: {fileID: 1258520477}
   - component: {fileID: 1258520476}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10622,7 +10650,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1318412390}
   - component: {fileID: 1318412391}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10706,7 +10734,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1319611041}
   - component: {fileID: 1319611042}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10874,7 +10902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1331909641}
   - component: {fileID: 1331909642}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11219,7 +11247,7 @@ GameObject:
   - component: {fileID: 1356671854}
   - component: {fileID: 1356671856}
   - component: {fileID: 1356671855}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11349,7 +11377,7 @@ GameObject:
   - component: {fileID: 1361934584}
   - component: {fileID: 1361934586}
   - component: {fileID: 1361934585}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11609,7 +11637,7 @@ GameObject:
   - component: {fileID: 1400042599}
   - component: {fileID: 1400042601}
   - component: {fileID: 1400042600}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11769,7 +11797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410233451}
   - component: {fileID: 1410233452}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11853,7 +11881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1411178213}
   - component: {fileID: 1411178214}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11938,7 +11966,7 @@ GameObject:
   - component: {fileID: 1426408062}
   - component: {fileID: 1426408064}
   - component: {fileID: 1426408063}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12067,7 +12095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427767156}
   - component: {fileID: 1427767157}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12151,7 +12179,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1429870778}
   - component: {fileID: 1429870779}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12235,7 +12263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430652127}
   - component: {fileID: 1430652128}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12320,7 +12348,7 @@ GameObject:
   - component: {fileID: 1434766732}
   - component: {fileID: 1434766734}
   - component: {fileID: 1434766733}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12449,7 +12477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1443477015}
   - component: {fileID: 1443477016}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_12 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12532,7 +12560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1457348890}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Midground_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12610,7 +12638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1478688394}
   - component: {fileID: 1478688395}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12695,7 +12723,7 @@ GameObject:
   - component: {fileID: 1482441642}
   - component: {fileID: 1482441644}
   - component: {fileID: 1482441643}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12824,7 +12852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496878241}
   - component: {fileID: 1496878242}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - RockCombinations1_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12908,7 +12936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1559940296}
   - component: {fileID: 1559940297}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12992,7 +13020,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1571074972}
   - component: {fileID: 1571074973}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13504,7 +13532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1598224970}
   - component: {fileID: 1598224971}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13672,7 +13700,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1607493190}
   - component: {fileID: 1607493191}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13756,7 +13784,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612128676}
   - component: {fileID: 1612128677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_8 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13971,7 +13999,7 @@ GameObject:
   - component: {fileID: 1644978838}
   - component: {fileID: 1644978840}
   - component: {fileID: 1644978839}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_18 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14101,7 +14129,7 @@ GameObject:
   - component: {fileID: 1647826333}
   - component: {fileID: 1647826335}
   - component: {fileID: 1647826334}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14229,7 +14257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1651579302}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Midground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14263,7 +14291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1654378321}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Midground_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14319,7 +14347,7 @@ GameObject:
   - component: {fileID: 1689758945}
   - component: {fileID: 1689758947}
   - component: {fileID: 1689758946}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14793,7 +14821,7 @@ GameObject:
   - component: {fileID: 1740947226}
   - component: {fileID: 1740947228}
   - component: {fileID: 1740947227}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15052,7 +15080,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1772956219}
   - component: {fileID: 1772956220}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15266,7 +15294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1781770926}
   - component: {fileID: 1781770927}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15351,7 +15379,7 @@ GameObject:
   - component: {fileID: 1815775957}
   - component: {fileID: 1815775959}
   - component: {fileID: 1815775958}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15694,7 +15722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1844796071}
   - component: {fileID: 1844796072}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15779,7 +15807,7 @@ GameObject:
   - component: {fileID: 1852417718}
   - component: {fileID: 1852417720}
   - component: {fileID: 1852417719}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_17 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16038,7 +16066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1896942496}
   - component: {fileID: 1896942497}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16123,7 +16151,7 @@ GameObject:
   - component: {fileID: 1942494748}
   - component: {fileID: 1942494750}
   - component: {fileID: 1942494749}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16465,7 +16493,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1966049490}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Midground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16560,7 +16588,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1978143058}
   - component: {fileID: 1978143059}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_21 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16645,7 +16673,7 @@ GameObject:
   - component: {fileID: 2015762902}
   - component: {fileID: 2015762904}
   - component: {fileID: 2015762903}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16774,7 +16802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039996321}
   - component: {fileID: 2039996322}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16859,7 +16887,7 @@ GameObject:
   - component: {fileID: 2047107446}
   - component: {fileID: 2047107448}
   - component: {fileID: 2047107447}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16988,7 +17016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2067925909}
   - component: {fileID: 2067925910}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - SmallRocks_24 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17455,7 +17483,7 @@ GameObject:
   - component: {fileID: 2130835114}
   - component: {fileID: 2130835116}
   - component: {fileID: 2130835115}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cave - Floor_10 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17714,6 +17742,26 @@ PrefabInstance:
       propertyPath: manaStorage
       value: 
       objectReference: {fileID: 1477794296}
+    - target: {fileID: 8709011048730331217, guid: 02c8f52cd17de5e4ca1597ecdf1df954, type: 3}
+      propertyPath: recoilXSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709011048730331217, guid: 02c8f52cd17de5e4ca1597ecdf1df954, type: 3}
+      propertyPath: recoilXSteps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709011048730331217, guid: 02c8f52cd17de5e4ca1597ecdf1df954, type: 3}
+      propertyPath: recoilYSteps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709011048730331217, guid: 02c8f52cd17de5e4ca1597ecdf1df954, type: 3}
+      propertyPath: SideAttackArea.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8709011048730331217, guid: 02c8f52cd17de5e4ca1597ecdf1df954, type: 3}
+      propertyPath: SideAttackArea.y
+      value: 2.46
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
